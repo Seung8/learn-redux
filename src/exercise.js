@@ -84,3 +84,6 @@ store.dispatch(addToList({
 
 // for bowser testing
 window.store = store;
+
+// for browser unsubscribe testing
+window.unsubscribe = unsubscribe;
