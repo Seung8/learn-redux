@@ -62,4 +62,25 @@ const reducer = (state = initialState, action) => {
 
 // store
 const store = createStore(reducer);
-// console.log(store.getStore());
+console.log(store.getState());
+
+// printing listner function for subscribe
+const listner = () => {
+	const state = store.getState();
+	console.log(state);
+}
+
+// store.subscribe() basically returns unsubscribe function.
+const unsubscribe = store.subscribe(listner);
+
+// action dispatch
+store.dispatch(increase());
+store.dispatch(decrease());
+store.dispatch(changeText('낄낄'));
+store.dispatch(addToList({
+	id: 1,
+	text: '낄낄'
+}));
+
+// for bowser testing
+window.store = store;
