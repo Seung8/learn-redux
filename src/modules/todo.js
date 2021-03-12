@@ -35,7 +35,7 @@ result state example
 */
 
 // reducer
-const todo = (state = initialState, action) => {
+export const todos = (state = initialState, action) => {
 	switch (action.type) {
 		case ADD_TODO:
 			return state.concat(action.todo);
@@ -48,3 +48,4 @@ const todo = (state = initialState, action) => {
 	}
 };
 
+export default todos;
